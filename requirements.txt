@@ -17,12 +17,11 @@ kombu==5.4.0
 # ---------------- AI / ML ----------------
 google-generativeai==0.7.0      # Gemini API client
 openai==1.47.0                  # Whisper / fallback LLMs
-sentence-transformers==3.1.1    # Embeddings for RAG
-faiss-cpu==1.9.0.post1       # Vector DB for retrieval
+sentence-transformers==2.2.2    # Embeddings for RAG (stable version for Render)
+faiss-cpu==1.7.4                # Vector DB for retrieval (has wheels)
 scikit-learn==1.5.1             # Clustering, LDA
 bertopic==0.16.2                # Topic modeling for disinfo detection
 transformers==4.44.2            # HuggingFace transformers
-                   # Needed for embeddings + models
 
 # ---------------- NLP Utils ----------------
 nltk==3.9.1
@@ -37,8 +36,8 @@ praw==7.7.1                     # Reddit API
 pillow==10.4.0                  # Image handling
 opencv-python==4.10.0.84        # Video/image processing
 exifread==3.0.0                 # EXIF metadata
-pycose==1.0.0        # Handle C2PA COSE signatures
-cbor2==5.6.3         # Needed for COSE/CBOR payloads
+pycose==1.0.0                   # Handle C2PA COSE signatures
+cbor2==5.6.3                    # Needed for COSE/CBOR payloads
 
 # ---------------- Web & Security ----------------
 httpx==0.27.2                   # Async HTTP client
@@ -53,27 +52,29 @@ prometheus-client==0.21.0
 opentelemetry-sdk==1.25.0
 opentelemetry-exporter-prometheus==0.46b0
 
-
 # ---------------- Testing ----------------
 pytest==8.3.2
 pytest-asyncio==0.23.8
 httpx[cli]==0.27.2              # For testing APIs
 
-
-# Deepfake Detection
-deepface==0.0.95   # auto-uses PyTorch backend
+# ---------------- Deepfake Detection ----------------
+deepface==0.0.95                 # Auto-uses PyTorch backend
 torch==2.5.1
-torchvision==0.21.0
-transformers==4.44.2
+torchvision==0.20.1
 timm==1.0.9
-pillow==10.4.0
 accelerate==0.34.2
 
-# Metadata Validation
+# ---------------- Metadata Validation ----------------
 exifread==3.0.0
 
-# Graph Analysis
+# ---------------- Graph Analysis ----------------
 networkx==3.3
 
-# Model Hub
+# ---------------- Model Hub ----------------
 huggingface-hub==0.24.6
+
+# ---------------- Async Utils ----------------
+aiohttp
+asyncpraw
+pydantic-settings
+python-multipart
