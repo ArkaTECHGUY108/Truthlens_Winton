@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meet the Developers – TruthLens</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Vanta.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta/dist/vanta.net.min.js"></script>
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #f5faff;
+      background: #0a0f1c;
+      overflow-x: hidden;
+    }
+
+    /* VANTA background container */
+    #vanta-bg {
+      width: 100%;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    /* Overlay content */
+    .content {
+      position: relative;
+      z-index: 1;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2.5rem;
+      color: #00f5a0;
+      text-shadow: 0 0 15px rgba(0, 245, 160, 0.6);
+      margin-bottom: 1rem;
+    }
+
+    header p {
+      color: #bbb;
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+    }
+
+    /* Developer Grid */
+    .dev-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .dev-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(0, 255, 200, 0.3);
+      border-radius: 16px;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 0 25px rgba(0, 245, 160, 0.2);
+      padding: 2rem 1.5rem;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .dev-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 0 35px rgba(0, 245, 160, 0.4);
+    }
+
+    .dev-card img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #00f5a0;
+      margin-bottom: 1rem;
+    }
+
+    .dev-card h2 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.5rem;
+      margin-bottom: 0.3rem;
+      color: #fff;
+    }
+
+    .dev-card p.role {
+      font-size: 0.9rem;
+      color: #00d9f5;
+      margin-bottom: 1rem;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .social-links a {
+      color: #00f5a0;
+      font-size: 1.2rem;
+      text-decoration: none;
+      transition: color 0.2s ease, transform 0.2s ease;
+    }
+
+    .social-links a:hover {
+      color: #00d9f5;
+      transform: scale(1.2);
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      border-top: 1px solid rgba(0, 255, 200, 0.2);
+      background: rgba(255, 255, 255, 0.02);
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      color: #bbb;
+      position: relative;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+  <div id="vanta-bg">
+    <div class="content">
+      <header>
+        <h1>Meet the Developers</h1>
+        <p>🚀 The minds behind TruthLens – Innovating with Sheer Dedication and Passion </p>
+      </header>
+
+      <section class="dev-grid">
+        <div class="dev-card">
+          <img src="assets/team/Arka.jpeg" alt="Arka Chakraborty">
+          <h2>Arka Chakraborty</h2>
+          <p class="role">Lead Backend Engineer and Architect</p>
+          <div class="social-links">
+            <a href="https://www.linkedin.com/in/arka-chakraborty-a09743271/" target="_blank">LinkedIn</a>
+            <a href="https://github.com/ArkaTECHGUY108" target="_blank">GitHub</a>
+            
+          </div>
+        </div>
+
+        <div class="dev-card">
+          <img src="assets/team/Aniruddha.jpeg" alt="Aniruddha">
+          <h2>Aniruddha Bera</h2>
+          <p class="role">AIML Specialist & Backend Orchestrator </p>
+          <div class="social-links">
+            <a href="https://www.linkedin.com/in/aniruddha-bera-31300428b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">LinkedIn</a>
+            <a href="https://github.com/Aniruddha543" target="_blank">GitHub</a>
+            
+          </div>
+        </div>
+
+        <div class="dev-card">
+          <img src="assets/team/Mainak.jpeg" alt="Mainak">
+          <h2>Mainak Pal</h2>
+          <p class="role">AI/ML & Web3 Specialist </p>
+          <div class="social-links">
+            <a href="https://www.linkedin.com/in/mainak-pal-abcdefg?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">LinkedIn</a>
+            <a href="https://github.com/mainakpal4" target="_blank">GitHub</a>
+            
+          </div>
+        </div>
+
+        <div class="dev-card">
+          <img src="assets/team/Rudrava.jpeg" alt="Rudrava">
+          <h2>Rudrava Tripathi</h2>
+          <p class="role">Frontend Architect & ML Engineer </p>
+          <div class="social-links">
+            <a href="https://linkedin.com/in/rudrava-tripathi-742853267" target="_blank">LinkedIn</a>
+            <a href="https://github.com/rudrava12" target="_blank">GitHub</a>
+            
+          </div>
+        </div>
+
+        
+
+        <div class="dev-card">
+          <img src="assets/team/Sourav.jpeg" alt="Arkapriya">
+          <h2>Sourav Kundu</h2>
+          <p class="role">Backend and Frontend Integrator </p>
+          <div class="social-links">
+            <a href="https://www.linkedin.com/in/sourav-kundu-6b5538292/" target="_blank">LinkedIn</a>
+            <a href="https://github.com/Techsourav-coder" target="_blank">GitHub</a>
+            
+          </div> 
+        </div>
+
+      </section>
+
+      <footer>
+        <p>© 2025 TruthLens | Crafted with dedication and love by Team WINTON</p>
+      </footer>
+    </div>
+  </div>
+
+  <script>
+    VANTA.NET({
+      el: "#vanta-bg",
+      mouseControls: true,
+      touchControls: true,
+      minHeight: 200,
+      minWidth: 200,
+      color: 0x00f5a0,
+      backgroundColor: 0x0a0f1c,
+      points: 20.0,
+      maxDistance: 25.0,
+      spacing: 12.0
+    });
+  </script>
+</body>
+</html>

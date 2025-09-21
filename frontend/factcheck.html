@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TruthLens – FactCheck Console</title>
+  <link rel="stylesheet" href="factcheck.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta/dist/vanta.net.min.js"></script>
+  <script src="https://unpkg.com/cytoscape@3.26.0/dist/cytoscape.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body id="vanta-bg">
+  <div class="app-container">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2>👁 TRUTHLENS 👁</h2>
+
+      <!-- Community -->
+      <div class="community-section">
+        <h3>🤝 Community Co-Verification</h3>
+        <div class="vote-buttons">
+          <button class="vote-btn upvote">Agree</button>
+          <button class="vote-btn downvote">Disagree</button>
+        </div>
+        <div class="progress-bar">
+          <div class="progress agree" style="width:70%"></div>
+          <div class="progress disagree" style="width:30%"></div>
+        </div>
+        <div class="vote-summary">70% agree, 30% disagree</div>
+      </div>
+
+      <!-- Ledger -->
+      <div class="ledger-section">
+        <h3>🔗 Blockchain Ledger</h3>
+        <p class="ledger-desc">Each verdict is anchored on-chain for transparency.</p>
+        <button class="ledger-btn">View Ledger Proof</button>
+        <div class="ledger-hash" id="ledger-hash"></div>
+      </div>
+    </aside>
+
+    <!-- Main Chat Section -->
+    <main class="chat-section">
+      <div class="chat-window" id="chat-window"></div>
+
+      <!-- Input -->
+      <div class="chat-input">
+        <div class="expand-btn" id="expand-btn">+</div>
+        <div class="expand-options" id="expand-options">
+          <input type="text" id="claim-text" placeholder="Enter claim text..." />
+          <input type="url" id="claim-url" placeholder="Paste claim URL..." />
+          <input type="file" id="claim-image" accept="image/*" />
+        </div>
+        <input type="text" id="chat-field" placeholder="Enter a claim to fact-check" />
+        <button id="send-btn">➤</button>
+      </div>
+
+      <!-- Result Panels -->
+      <div class="result-panels">
+        <!-- Reasoning -->
+        <div class="reasoning-panel">
+          <h4>Reasoning</h4>
+          <div id="fallacies" class="chip-row"></div>
+          <div id="biases" class="chip-row"></div>
+          <div id="debiased" class="debiased"></div>
+          <div id="explanation" class="explanation"></div>
+          <div id="generative-explainer" class="generative-explainer"></div>
+        </div>
+
+        <!-- Provenance -->
+        <div class="prov-panel">
+          <h4>Provenance Graph</h4>
+          <div id="prov-graph"></div>
+          <div class="prov-legend">
+            <span class="legend origin">● Origin</span>
+            <span class="legend amplifier">● Amplifier</span>
+            <span class="legend factchecker">● Factchecker</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Social Signals -->
+      <div class="social-panel">
+        <h4>📢 Social Signals</h4>
+        <div id="social-signals">
+          <!-- Injected dynamically from backend -->
+          <div class="signal-item"><strong>Twitter</strong>: Demo tweet about claim <a href="#">link</a><span class="timestamp">just now</span></div>
+          <div class="signal-item"><strong>YouTube</strong>: Demo video about claim <a href="#">link</a><span class="timestamp">just now</span></div>
+          <div class="signal-item"><strong>Facebook</strong>: Demo page mention <a href="#">link</a><span class="timestamp">just now</span></div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="factcheck.js"></script>
+</body>
+</html>
