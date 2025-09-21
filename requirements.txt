@@ -18,7 +18,7 @@ kombu==5.4.0
 google-generativeai==0.7.0      # Gemini API client
 openai==1.47.0                  # Whisper / fallback LLMs
 sentence-transformers==2.2.2    # Embeddings for RAG (stable version for Render)
-faiss-cpu==1.7.4                # Vector DB for retrieval (has wheels)
+faiss-cpu==1.12.0                # Vector DB for retrieval (has wheels)
 scikit-learn==1.5.1             # Clustering, LDA
 bertopic==0.16.2                # Topic modeling for disinfo detection
 transformers==4.44.2            # HuggingFace transformers
